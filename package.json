@@ -1,0 +1,28 @@
+{
+  "name": "remote_machine_operate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "cron": "^1.0.6",
+    "ejs": "^2.2.4",
+    "express": "^3.2.6",
+    "express-partials": "^0.3.0",
+    "mysql": "^2.5.4",
+    "ping": "^0.1.9",
+    "shelljs": "^0.3.0",
+    "simple-ssh": "^0.8.1"
+  },
+  "description": "用于远程操作服务器开机关机",
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [
+    "wakeonlan",
+    "remote_poweroff"
+  ],
+  "author": "hefy",
+  "license": "ISC"
+}

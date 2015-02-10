@@ -1,0 +1,127 @@
+<script> 
+$(document).ready(function() {       
+    $('#submit').click(function(){
+        var ids=[];
+        
+        $("input[name='subBox']").each(function(){
+			 console.log($(this).prop("checked"));
+   			 if (true == $(this).prop("checked")) 
+    			ids.push($(this).prop("id"));
+		});
+        //var data="{'data':["+ids+"]}";
+        if(window.confirm('确认poweron所有勾选机器么？'))
+        {
+        $.ajax({
+              	type:"post",
+              	url:"/wakeonlan",
+              	data:{'data': JSON.stringify(ids)}
+              	}).done(function(resdata){
+              		alert(success);
+              	});
+                alert("开机指令已发送，机器将在2-3分钟内开机，请稍候");
+        }
+		});
+    $('#poweroff').click(function(){
+        var ids=[];
+        
+        $("input[name='subBox']").each(function(){
+			 console.log($(this).prop("checked"));
+   			 if (true == $(this).prop("checked")) 
+    			ids.push($(this).prop("id"));
+		});
+        //var data="{'data':["+ids+"]}";
+
+        if(window.confirm('确认poweroff所有勾选机器么？'))
+        {
+        $.ajax({
+              	type:"post",
+              	url:"/poweroff",
+              	data:{'data': JSON.stringify(ids)}
+              	}).done(function(resdata){
+              		alert(success);
+              	});
+                alert("所有关机指令已发送");
+		}
+    });
+    $('#selectAll').bind("click",function(){
+    if(this.checked){
+        $('input[name="subBox"]').each(function(){
+            $(this).prop("checked",true);
+    })}else{
+        $('input[name="subBox"]').each(function(){
+            $(this).prop("checked",false);
+    })}
+    });
+});
+function customersController($scope,$http) {
+  $http.get("/query").success(function(response) {$scope.names = response;});
+   $scope.formData = {};
+};
+
+</script>
+<div class="hero-unit">
+    <h1>Welcome</h1>
+    <p>This is based on Node.js</p>
+    <p>
+ <form>
+<table class="table table-bordered"  ng-app="" ng-controller="customersController">
+<tr>
+    <th>
+        <input type="checkbox" id ="selectAll"/ >
+    </th>
+    <th>机器ip</th>
+     <th>机器用户名</th>
+     <th>ssh端口号</th>
+     <th>状态(实时)</th>
+  </tr>
+
+  <tr ng-repeat="x in names">
+    <td>  
+         <label class="checkbox-inline" >
+         <input type="checkbox" name="subBox" id="{{x.machine_id}}"  ng-true-value="0"  >{{x.machine_name}}
+        </label>
+    </td>
+ 	<td>{{ x.machine_ip}}</td>
+ 	<td>{{ x.machine_user}}</td>
+ 	<td>{{ x.ssh_port}}</td>
+    <td>
+        <img src="images/off.png"  id="{{x.machine_id}}" name="status" ></img>
+    </td>
+  </tr>
+</table>
+</form>
+        <a class="btn btn-primary btn-large" id="submit" >poweron</a>
+        <a class="btn btn-large" id="poweroff">poweroff</a>
+    </p>
+</div>
+<div class="row">
+    <div class="span4">
+        <h2>提示：</h2>
+        <p>点击poweron，将向所有勾选机器发送开机命令</p>
+        <p>点击poweroff，将向所有勾选机器发送关机指令</p>
+    </div>
+</div>
+<script>
+    function getStatus(){
+        $.get(
+            "/getStatus",
+            function(msg){
+                var data = JSON.parse(msg); 
+                $("img[name='status']").each(function(){
+                    var flag = 0;
+                    for(var i=0;i<data.length;i++)
+                    {
+                        if (this.id == data[i])
+                            flag = 1;
+                    }
+                    if(flag == 1)
+                        this.src = "images/on.png";
+                    else
+                        this.src = "images/off.png";
+                });
+            }
+        );
+        setTimeout('getStatus()',2000);
+    }
+    setTimeout('getStatus()',1000);
+</script>
