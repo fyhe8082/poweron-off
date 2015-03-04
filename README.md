@@ -12,11 +12,10 @@ sudo make
 sudomake install
 sudo cp /usr/local/bin/node /usr/sbin/
 
-查看当前安装的Node的版本 
+查看当前安装的Node的版本
 node -v
 
 v0.10.35
-
 
 2.配置mysql数据库
 vim shutdown/models/conn.js
@@ -78,6 +77,6 @@ sudo supervisor app.js
 ### Tools
 
 Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)
- ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))   
+ ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))
 
 Nodeclipse is free open-source project that grows with your contributions.
