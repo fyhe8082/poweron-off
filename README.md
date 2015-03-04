@@ -52,7 +52,8 @@ machine_pwd _该用户的密码
 ssh_port  _ssh端口号
 machine_mac  _每台机器的MAC地址是eth0的地址可通过ifconfig查看。
 
-####配置程序模块
+####
+配置程序模块
 
     cd shutdown
     sudo npm install
@@ -76,9 +77,8 @@ machine_mac  _每台机器的MAC地址是eth0的地址可通过ifconfig查看。
 使用ctrl-c退出
 
 ##客户机配置
-正常情况下，BIOS是默认wanonlan功能打开的
-若操作后无法启动，需要对客户机进行BIOS设置，
-进入BIOS的Power Management Setup，设置PME Event Wake Up(这其实是一种Wake On PCI Card模式)为 Enabled。注意，有些机器可能为Wake On Lan或Wake On PCI Card。Wake On Lan模式可以在完全关机状态下唤醒，而Wake On PCI Card模式要在深度休眠状态下唤醒。造成这样的区别主要是因为主板的设计不一样，现在的计算机一般都是Wake On PCI Card模式的。
+1. 正常情况下，BIOS是默认wanonlan功能打开的
+2. 若操作后无法启动，需要对客户机进行BIOS设置，进入BIOS的Power Management Setup，设置PME Event Wake Up(这其实是一种Wake On PCI Card模式)为 Enabled。注意，有些机器可能为Wake On Lan或Wake On PCI Card。Wake On Lan模式可以在完全关机状态下唤醒，而Wake On PCI Card模式要在深度休眠状态下唤醒。造成这样的区别主要是因为主板的设计不一样，现在的计算机一般都是Wake On PCI Card模式的。
 注：公司这边的服务器全部都是wakeonlan模式，而且设置不在Power Management中，需要自行需找，关键字是wanonlan。
 
 ### Tools
