@@ -22,9 +22,9 @@ v0.10.35
 ####配置mysql数据库
 
     vim shutdown/models/conn.js
-password port修改为当前机器参数
-password为mysql的密码
-port 可在进入mysql后，使用show variables like 'port';查看
+password port修改为当前机器参数<br>
+password为mysql的密码<br>
+port 可在进入mysql后，使用show variables like 'port';查看<br>
 
     mysql -uroot -p
     create database machine;
@@ -45,12 +45,12 @@ port 可在进入mysql后，使用show variables like 'port';查看
     CREATE UNIQUE INDEX t_quiz_IDX_0 on machine(machine_id);
 
     insert into machine(machine_ip,machine_user,machine_pwd,ssh_port,machine_mac,machine_location,machine_os) values ('192.168.99.208','prod','zykie2.0','8822',"D8:D3:85:DC:09:2E","R2-29(1U)","centOS");
-_按以上格式插入数据，mac_location和machine_os以外,其他都必填，
-machine_ip  _ip地址，格式如上
-machine_user _ssh登录的用户名，该用户需要在sudoer中
-machine_pwd _该用户的密码
-ssh_port  _ssh端口号
-machine_mac  _每台机器的MAC地址是eth0的地址可通过ifconfig查看。
+_按以上格式插入数据，mac_location和machine_os以外,其他都必填，<br>
+machine_ip  _ip地址，格式如上<br>
+machine_user _ssh登录的用户名，该用户需要在sudoer中<br>
+machine_pwd _该用户的密码<br>
+ssh_port  _ssh端口号<br>
+machine_mac  _每台机器的MAC地址是eth0的地址可通过ifconfig查看。<br>
 
 ####
 配置程序模块
