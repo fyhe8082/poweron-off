@@ -83,9 +83,4 @@ machine_mac  _每台机器的MAC地址是eth0的地址可通过ifconfig查看。
 
 注：公司这边的服务器全部都是wakeonlan模式，而且设置不在Power Management中，需要自行需找，关键字是wanonlan。
 
-### Tools
 
-Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)
- ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))
-
-Nodeclipse is free open-source project that grows with your contributions.
