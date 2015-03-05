@@ -1,0 +1,218 @@
+{
+  "machine": {
+    "slug": "machine",
+    "table": {
+      "name": "machine",
+      "pk": "machine_id",
+      "verbose": "machine"
+    },
+    "columns": [
+      {
+        "name": "machine_id",
+        "verbose": "machine_id",
+        "control": {
+          "text": true
+        },
+        "type": "int(11)",
+        "allowNull": false,
+        "defaultValue": null,
+        "listview": {
+          "show": false
+        },
+        "editview": {
+          "show": false
+        }
+      },
+      {
+        "name": "machine_ip",
+        "verbose": "machine_ip",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": false,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_user",
+        "verbose": "machine_user",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": false,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_pwd",
+        "verbose": "machine_pwd",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": false,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "ssh_port",
+        "verbose": "ssh_port",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": true,
+        "defaultValue": "8822",
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_mac",
+        "verbose": "machine_mac",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(20)",
+        "allowNull": true,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_location",
+        "verbose": "machine_location",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": true,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_useteam",
+        "verbose": "machine_useteam",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": true,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_os",
+        "verbose": "machine_os",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(16)",
+        "allowNull": true,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      },
+      {
+        "name": "machine_poweroff",
+        "verbose": "machine_poweroff",
+        "control": {
+          "text": true
+        },
+        "type": "char(1)",
+        "allowNull": true,
+        "defaultValue": "1",
+        "listview": {
+          "show": false
+        },
+        "editview": {
+          "show": false
+        }
+      }
+    ],
+    "mainview": {
+      "show": true
+    },
+    "listview": {
+      "order": {},
+      "page": 25
+    },
+    "editview": {
+      "readonly": false
+    }
+  },
+  "ss": {
+    "slug": "ss",
+    "table": {
+      "name": "ss",
+      "pk": "",
+      "verbose": "ss"
+    },
+    "columns": [
+      {
+        "name": "name",
+        "verbose": "name",
+        "control": {
+          "text": true
+        },
+        "type": "varchar(10)",
+        "allowNull": true,
+        "defaultValue": null,
+        "listview": {
+          "show": true
+        },
+        "editview": {
+          "show": true
+        }
+      }
+    ],
+    "mainview": {
+      "show": true
+    },
+    "listview": {
+      "order": {},
+      "page": 25
+    },
+    "editview": {
+      "readonly": false
+    }
+  }
+}
