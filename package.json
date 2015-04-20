@@ -10,6 +10,7 @@
     "cron": "^1.0.6",
     "ejs": "^2.2.4",
     "express": "^3.2.6",
+    "express-admin": "^1.2.6",
     "express-partials": "^0.3.0",
     "mysql": "^2.5.4",
     "ping": "^0.1.9",
