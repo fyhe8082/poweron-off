@@ -1,3 +1,4 @@
+version 0.2
 ## Usage
 用于远程操作服务器开机关机
 
@@ -65,7 +66,12 @@ machine_mac  _每台机器的MAC地址是eth0的地址可通过ifconfig查看。
 在shutdown目录下
 
     sudo pm2 start app.js -i max --name "api"
-程序默认在8000端口
+程序默认在8000端口,在以下访问
+
+    localhost:8000
+管理界面在
+
+    localhost:8000/admin
 
 关闭程序：
 
