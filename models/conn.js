@@ -1,5 +1,8 @@
-var mysql = require('mysql');
-var conn = mysql.createConnection({
+var mysql = require('easymysql');
+var conn = mysql.create({
+	"maxconnections" : 10
+});
+conn.addserver({
     host: '192.168.99.86',
     user: 'root',
     password: '12345',

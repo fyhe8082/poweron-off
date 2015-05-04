@@ -2,7 +2,6 @@
 var conn = require("../models/conn")
   , sh = require("shelljs")
   , SSH = require('simple-ssh');
-conn.connect();
 /* GET home page. */
 exports.index =  function(req, res) {
     res.render('index',{
